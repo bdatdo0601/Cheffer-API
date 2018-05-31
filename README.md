@@ -25,9 +25,11 @@ Visual Studio Code can work directly with JavaScript out of the box. However, th
 
 ### Local Host setup
 
-Once the project cloned into local machine, simply execute `yarn` and the package manager will install all necessary dependencies for the project.
+Once the project cloned into local machine, simply execute `yarn` and the package manager will install all necessary dependencies for the project. When all dependencies are installed, execute `yarn start` and the server will be up at `http://localhost:3000/`.
 
 ## Develop
+
+GraphQL endpoint is available at `http://localhost:3000/graphql`. In development environment, the endpoint will expose GraphiQL to allow quick request testing. This will be disable in production
 
 ### Commands
 
