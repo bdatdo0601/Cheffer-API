@@ -7,6 +7,7 @@ API for Project Green (Calling it Cheffer for faster navigation). Built with Nod
 *   [Node](https://nodejs.org/en/) (> v8.0.0) **NOTE: Untested with v10.0.0**
 *   [Yarn Package Manager](https://yarnpkg.com/en/)
 *   [Visual Studio Code](https://code.visualstudio.com/)
+*   [MongoDB](https://www.mongodb.com/) (`brew install mongodb`)
 
 ## Setup
 
