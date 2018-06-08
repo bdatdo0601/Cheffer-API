@@ -5,6 +5,9 @@
     "author": "Dat Do",
     "license": "MIT",
     "private": false,
+    "engine": {
+        "node": "10.3.0"
+    },
     "scripts": {
         "clean": "rm -rf build && mkdir build",
         "build-server": "babel -d ./build ./src -s",
