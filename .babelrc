@@ -9,5 +9,5 @@
             }
         ]
     ],
-    "plugins": [["transform-object-rest-spread"], ["inline-import-graphql-ast"]]
+    "plugins": [["transform-object-rest-spread"], ["import-graphql"]]
 }

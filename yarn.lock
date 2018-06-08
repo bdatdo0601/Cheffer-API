@@ -119,8 +119,8 @@
   resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.12.6.tgz#3d619198585fcabe5f4e1adfb5cf5f3388c66c13"
 
 "@types/node@*":
-  version "10.3.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.0.tgz#078516315a84d56216b5d4fed8f75d59d3b16cac"
+  version "10.3.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.3.2.tgz#3840ec6c12556fdda6e0e6d036df853101d732a4"
 
 "@types/pino@^4.7.1":
   version "4.16.0"
@@ -159,8 +159,8 @@ acorn@^3.0.4:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
 
 acorn@^5.5.0:
-  version "5.6.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.6.1.tgz#c9e50c3e3717cf897f1b071ceadbb543bbc0a8d4"
+  version "5.6.2"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.6.2.tgz#b1da1d7be2ac1b4a327fb9eab851702c5045b4e7"
 
 ajv-keywords@^2.1.0:
   version "2.1.1"
@@ -249,8 +249,8 @@ apollo-link@^1.2.1:
     zen-observable-ts "^0.8.9"
 
 apollo-resolvers@^1.1.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/apollo-resolvers/-/apollo-resolvers-1.3.0.tgz#dd8a18829bd943414041594573d10d7c2357eb92"
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/apollo-resolvers/-/apollo-resolvers-1.3.1.tgz#538594c8c36040e2cb5be96e8c653a1c7192280d"
   dependencies:
     assert "^1.4.1"
     deepmerge "^1.3.1"
@@ -334,26 +334,26 @@ async-each@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/async-each/-/async-each-1.0.1.tgz#19d386a1d9edc6e7c1c85d388aedbcc56d33602d"
 
-async@2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/async/-/async-2.1.4.tgz#2d2160c7788032e4dd6cbe2502f1f9a2c8f6cde4"
+async@2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/async/-/async-2.6.1.tgz#b245a23ca71930044ec53fa46aa00a3e87c6a610"
   dependencies:
-    lodash "^4.14.0"
+    lodash "^4.17.10"
 
 atob@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.1.tgz#ae2d5a729477f289d60dd7f96a6314a22dd6c22a"
 
 avvio@^5.4.3:
-  version "5.4.3"
-  resolved "https://registry.yarnpkg.com/avvio/-/avvio-5.4.3.tgz#a48a676cc05bc087f0e55cc6316052fb0d5049de"
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/avvio/-/avvio-5.5.0.tgz#ccecf3f43b2d4bd0c7da23d414d431e69e0bcb70"
   dependencies:
     debug "^3.1.0"
     fastq "^1.5.0"
 
 aws-sdk@^2.211.0:
-  version "2.250.1"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.250.1.tgz#0cc04edfc41fa0a6a5eccbc56888832f59270141"
+  version "2.254.1"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.254.1.tgz#70d0a97bac0d5e8ceaf36ddb6b3651f01da4790e"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -555,9 +555,9 @@ babel-plugin-check-es2015-constants@^6.22.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-inline-import-graphql-ast@^2.3.6:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-inline-import-graphql-ast/-/babel-plugin-inline-import-graphql-ast-2.4.1.tgz#8ac66dbf815263331516791e9d14089938ec39be"
+babel-plugin-import-graphql@^2.5.2:
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-import-graphql/-/babel-plugin-import-graphql-2.5.2.tgz#6e5a31c8bf93a67d4b6e1e2580d86f4b22470425"
   dependencies:
     graphql-tag "^2.9.2"
 
@@ -974,8 +974,8 @@ browserslist@^3.2.6:
     electron-to-chromium "^1.3.47"
 
 bson@~1.0.4, bson@~1.0.5:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/bson/-/bson-1.0.6.tgz#444db59ddd4c24f0cb063aabdc5c8c7b0ceca912"
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/bson/-/bson-1.0.9.tgz#12319f8323b1254739b7c6bef8d3e89ae05a2f57"
 
 buffer-equal-constant-time@1.0.1:
   version "1.0.1"
@@ -1030,8 +1030,8 @@ camelcase@^4.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
 caniuse-lite@^1.0.30000844:
-  version "1.0.30000847"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000847.tgz#be77f439be29bbc57ae08004b1e470b653b1ec1d"
+  version "1.0.30000851"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000851.tgz#3b498aebf9f92cf6cff4ab54d13b557c0b590533"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -1114,8 +1114,8 @@ class-utils@^0.3.5:
     static-extend "^0.1.1"
 
 classnames@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
 
 cli-boxes@^1.0.0:
   version "1.0.0"
@@ -1131,9 +1131,9 @@ cli-width@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
 
-clipboard@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-1.7.1.tgz#360d6d6946e99a7a1fef395e42ba92b5e9b5a16b"
+clipboard@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.1.tgz#a12481e1c13d8a50f5f036b0560fe5d16d74e46a"
   dependencies:
     good-listener "^1.2.2"
     select "^1.1.2"
@@ -1972,7 +1972,7 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.4:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
-graphql-request@^1.3.6:
+graphql-request@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-1.6.0.tgz#afe87cf2a336acabb0cc2a875900202eda89f412"
   dependencies:
@@ -1993,21 +1993,21 @@ graphql-tools@^2.21.0:
     uuid "^3.1.0"
 
 graphql-voyager@^1.0.0-rc.15:
-  version "1.0.0-rc.15"
-  resolved "https://registry.yarnpkg.com/graphql-voyager/-/graphql-voyager-1.0.0-rc.15.tgz#1ece08f2ec0606dbf7ecec234fb4bd1466c05f0c"
+  version "1.0.0-rc.17"
+  resolved "https://registry.yarnpkg.com/graphql-voyager/-/graphql-voyager-1.0.0-rc.17.tgz#2ab66e08f4be5c4ebcb7f0152b097f51b8f5c8ac"
   dependencies:
     "@f/animate" "^1.0.1"
     classnames "^2.2.5"
-    clipboard "^1.7.1"
+    clipboard "^2.0.1"
     commonmark "^0.28.1"
-    graphql-request "^1.3.6"
-    lodash "^4.17.2"
-    prop-types "^15.6.0"
+    graphql-request "^1.6.0"
+    lodash "^4.17.10"
+    prop-types "^15.6.1"
     react-modal "^2.3.3"
-    react-redux "^5.0.6"
-    react-toolbox "^2.0.0-beta.11"
-    redux "^3.7.1"
-    redux-thunk "^2.1.0"
+    react-redux "^5.0.7"
+    react-toolbox "^2.0.0-beta.13"
+    redux "^4.0.0"
+    redux-thunk "^2.3.0"
     reselect "^3.0.1"
     svg-pan-zoom "^3.5.2"
 
@@ -2071,8 +2071,8 @@ hoist-non-react-statics@^1.2.0:
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
 
 hoist-non-react-statics@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.0.tgz#d2ca2dfc19c5a91c5a6615ce8e564ef0347e2a40"
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.2.tgz#de8381ea0fbed0041cb49d132c1ff654d3c79455"
 
 home-or-tmp@^2.0.0:
   version "2.0.0"
@@ -2436,8 +2436,8 @@ jmespath@0.15.0:
   resolved "https://registry.yarnpkg.com/jmespath/-/jmespath-0.15.0.tgz#a3f222a9aae9f966f5d27c796510e28091764217"
 
 joi@^13.2.0:
-  version "13.3.0"
-  resolved "https://registry.yarnpkg.com/joi/-/joi-13.3.0.tgz#4defd4333b539c5d10e444ab44f5a5583480f17c"
+  version "13.4.0"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-13.4.0.tgz#afc359ee3d8bc5f9b9ba6cdc31b46d44af14cecc"
   dependencies:
     hoek "5.x.x"
     isemail "3.x.x"
@@ -2569,7 +2569,7 @@ load-json-file@^1.0.0:
     pinkie-promise "^2.0.0"
     strip-bom "^2.0.0"
 
-lodash-es@^4.17.5, lodash-es@^4.2.1:
+lodash-es@^4.17.5:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.10.tgz#62cd7104cdf5dd87f235a837f0ede0e8e5117e05"
 
@@ -2609,7 +2609,7 @@ lodash.once@^4.0.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
 
-lodash@^4.0.0, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
+lodash@^4.0.0, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
@@ -2769,9 +2769,9 @@ mongodb-core@3.0.9:
     bson "~1.0.4"
     require_optional "^1.0.1"
 
-mongodb@3.0.8:
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-3.0.8.tgz#2c1daecac9a0ec2de2f2aea4dc97d76ae70f8951"
+mongodb@3.0.9:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-3.0.9.tgz#742e685e45ac9c3ead02a91c9ebaae7165bb2def"
   dependencies:
     mongodb-core "3.0.8"
 
@@ -2786,14 +2786,14 @@ mongoose-legacy-pluralize@1.0.2:
   resolved "https://registry.yarnpkg.com/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.2.tgz#3ba9f91fa507b5186d399fb40854bff18fb563e4"
 
 mongoose@^5.0.15:
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.1.3.tgz#77576b117d6387fb6dd0a6db95ac41b5882dac0a"
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.1.4.tgz#eda83a5d81149c8114b6cac5e8b419324f92cc4b"
   dependencies:
-    async "2.1.4"
+    async "2.6.1"
     bson "~1.0.5"
     kareem "2.1.0"
     lodash.get "4.4.2"
-    mongodb "3.0.8"
+    mongodb "3.0.9"
     mongoose-legacy-pluralize "1.0.2"
     mpath "0.4.1"
     mquery "3.0.0"
@@ -3173,8 +3173,8 @@ preserve@^0.2.0:
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
 prettier@^1.12.1:
-  version "1.13.4"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.4.tgz#31bbae6990f13b1093187c731766a14036fa72e6"
+  version "1.13.5"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.5.tgz#7ae2076998c8edce79d63834e9b7b09fead6bfd0"
 
 private@^0.1.6, private@^0.1.8:
   version "0.1.8"
@@ -3285,7 +3285,7 @@ react-modal@^2.3.3:
     exenv "^1.2.0"
     prop-types "^15.5.10"
 
-react-redux@^5.0.6:
+react-redux@^5.0.7:
   version "5.0.7"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.7.tgz#0dc1076d9afb4670f993ffaef44b8f8c1155a4c8"
   dependencies:
@@ -3302,7 +3302,7 @@ react-style-proptype@^3.0.0:
   dependencies:
     prop-types "^15.5.4"
 
-react-toolbox@^2.0.0-beta.11:
+react-toolbox@^2.0.0-beta.13:
   version "2.0.0-beta.13"
   resolved "https://registry.yarnpkg.com/react-toolbox/-/react-toolbox-2.0.0-beta.13.tgz#43f80c2e672ebb8bd56baff24167f65e88858950"
   dependencies:
@@ -3364,18 +3364,16 @@ readdirp@^2.0.0:
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
 
-redux-thunk@^2.1.0:
+redux-thunk@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
 
-redux@^3.7.1:
-  version "3.7.2"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
+redux@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.0.tgz#aa698a92b729315d22b34a0553d7e6533555cc03"
   dependencies:
-    lodash "^4.2.1"
-    lodash-es "^4.2.1"
     loose-envify "^1.1.0"
-    symbol-observable "^1.0.3"
+    symbol-observable "^1.2.0"
 
 regenerate@^1.2.1:
   version "1.4.0"
@@ -3829,7 +3827,7 @@ svg-pan-zoom@^3.5.2:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/svg-pan-zoom/-/svg-pan-zoom-3.5.3.tgz#e6b52a1b349716c78e7b5f92d0ed1cc1b860f5d8"
 
-symbol-observable@^1.0.3:
+symbol-observable@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
 
