@@ -1,5 +1,7 @@
 build:
   languages:
     - node
+  pre:
+    - yarn build
 run:
-  web: yarn build && yarn start-production
+  web: yarn start-production
