@@ -15,7 +15,8 @@
         "init-db": "nodemon --exec babel-node -- src/dbinit.js",
         "start": "rm -rf ./node_modules/.cache/babel-loader && nodemon --exec babel-node -- src/index.js",
         "build": "yarn clean && yarn build-server",
-        "start-production": "NODE_ENV=production node ./build/dbinit.js && node ./build/index.js",
+        "init-db-production": "node ./build/dbinit.js",
+        "start-production": "NODE_ENV=production node ./build/index.js",
         "test": "babel-node -- test/index.js"
     },
     "nodemonConfig": {
