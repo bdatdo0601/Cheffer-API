@@ -8,6 +8,8 @@ API for Project Green (Calling it Cheffer for faster navigation). Built with Nod
 *   [Yarn Package Manager](https://yarnpkg.com/en/)
 *   [Visual Studio Code](https://code.visualstudio.com/)
 *   [MongoDB](https://www.mongodb.com/) (`brew install mongodb`)
+    *   MacOSX 10.12
+    *   XCode 8.3.2
 
 ## Setup
 
