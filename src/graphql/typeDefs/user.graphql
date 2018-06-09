@@ -9,7 +9,7 @@ type FullName {
 }
 
 type Friend {
-    User: [User]!
+    user: User!
     timeCreated: Date!
 }
 
@@ -23,5 +23,5 @@ type User {
     favoriteRecipes: [Recipe]!
     favoriteRecipeTypes: [RecipeType]!
     viewedRecipes: [Recipe]!
-    friends: [User]!
+    friends: [Friend]!
 }
