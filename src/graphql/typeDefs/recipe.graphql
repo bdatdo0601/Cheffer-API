@@ -1,0 +1,39 @@
+#import * from "./ingredient.graphql"
+#import * from "./foodFilterParameter.graphql"
+#import * from "./util.graphql"
+
+type RecipeType {
+    recipeTypeID: ID!
+    name: String!
+}
+
+type IngredientItem {
+    ingredient: Ingredient!
+    amount: Float!
+}
+
+type RecipeStep {
+    summary: String!
+    detailDescription: String
+}
+
+type Comment {
+    commentID: ID!
+    user: User!
+    comment: String!
+    reply: [Comment]!
+    timeCreated: Date!
+}
+
+type Recipe {
+    recipeID: ID!
+    name: String!
+    synonyms: [String]!
+    type: [RecipeType]!
+    specialitiesFilter: [FoodFilterParameter]!
+    ingredients: [IngredientItem]!
+    steps: [RecipeStep]!
+    associatedRecipes: [Recipe]!
+    comments: [Comment]!
+    timeCreated: Date!
+}

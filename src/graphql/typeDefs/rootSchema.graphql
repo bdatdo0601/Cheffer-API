@@ -1,4 +1,11 @@
+# import * from "./util.graphql"
+# import * from "./recipe.graphql"
+# import * from "./user.graphql"
+# import * from "./foodFilterParameter.graphql"
+# import * from "./ingredient.graphql"
+
 type Query {
+    fullName: FullName!
     hello: String!
 }
 

@@ -1,0 +1,27 @@
+#import * from "./util.graphql"
+#import * from "./recipe.graphql"
+#import * from "./foodFilterParameter.graphql"
+
+type FullName {
+    first: String!
+    middle: String
+    lastName: String!
+}
+
+type Friend {
+    User: [User]!
+    timeCreated: Date!
+}
+
+type User {
+    userID: ID!
+    name: FullName!
+    email: Email!
+    password: String!
+    dateJoined: Date
+    foodFilerParams: [FoodFilterParameter]!
+    favoriteRecipes: [Recipe]!
+    favoriteRecipeTypes: [RecipeType]!
+    viewedRecipes: [Recipe]!
+    friends: [User]!
+}

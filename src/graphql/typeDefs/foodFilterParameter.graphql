@@ -1,0 +1,8 @@
+# import * from "./ingredient.graphql"
+
+type FoodFilterParameter {
+    foodFilterParameterID: ID!
+    name: String!
+    type: FoodFilterParameterType!
+    restriction: [IngredientType]!
+}

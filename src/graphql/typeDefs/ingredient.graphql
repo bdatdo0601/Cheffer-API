@@ -1,0 +1,17 @@
+type IngredientType {
+    ingredientTypeID: ID!
+    name: String!
+}
+
+type IngredientGroup {
+    IngredientGroup: ID!
+    name: String!
+}
+
+type Ingredient {
+    ingredientID: ID!
+    name: String!
+    synonyms: [String]!
+    type: [IngredientType]!
+    group: [IngredientGroup]!
+}
