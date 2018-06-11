@@ -4,6 +4,9 @@
 # import * from "./foodFilterParameter.graphql"
 # import * from "./ingredient.graphql"
 
+"""
+Query that you can make to server, allowing to receive data from backend
+"""
 type Query {
     fullName: FullName!
     hello: String!
