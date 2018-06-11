@@ -13,15 +13,20 @@ type Friend {
     timeCreated: Date!
 }
 
+type ViewedRecipe {
+    recipe: Recipe!
+    dateViewed: Date!
+}
+
 type User {
     userID: ID!
     name: FullName!
     email: Email!
     password: String!
     dateJoined: Date
-    foodFilerParams: [FoodFilterParameter]!
+    foodFilterParams: [FoodFilterParameter]!
     favoriteRecipes: [Recipe]!
     favoriteRecipeTypes: [RecipeType]!
-    viewedRecipes: [Recipe]!
+    viewedRecipes: [ViewedRecipe]!
     friends: [Friend]!
 }

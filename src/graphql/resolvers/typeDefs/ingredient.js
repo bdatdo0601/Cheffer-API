@@ -15,3 +15,10 @@ const group = (obj, args, context, info) => {
         },
     ];
 };
+
+export default {
+    Ingredient: {
+        type,
+        group,
+    },
+};

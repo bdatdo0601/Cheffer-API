@@ -1,3 +1,10 @@
+const type = (obj, args, context, info) => {
+    return {
+        foodFilterParameterID: "1",
+        name: "",
+    };
+};
+
 const restrictions = (obj, args, context, info) => {
     return [
         {
@@ -7,9 +14,9 @@ const restrictions = (obj, args, context, info) => {
     ];
 };
 
-const type = (obj, args, context, info) => {
-    return {
-        foodFilterParameterID: "1",
-        name: "",
-    };
+export default {
+    FoodFilterParameter: {
+        type,
+        restrictions,
+    },
 };

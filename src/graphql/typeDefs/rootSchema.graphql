@@ -7,6 +7,7 @@
 type Query {
     fullName: FullName!
     hello: String!
+    getUser: User!
 }
 
 schema {
