@@ -4,12 +4,12 @@ API for Project Green (Calling it Cheffer for faster navigation). Built with Nod
 
 ## Pre-requirements
 
-*   [Node](https://nodejs.org/en/) (> v8.0.0) **NOTE: Untested with v10.0.0**
-*   [Yarn Package Manager](https://yarnpkg.com/en/)
-*   [Visual Studio Code](https://code.visualstudio.com/)
-*   [MongoDB](https://www.mongodb.com/) (`brew install mongodb`)
-    *   MacOSX 10.12
-    *   XCode 8.3.2
+-   [Node](https://nodejs.org/en/) (> v8.0.0) **NOTE: Untested with v10.0.0**
+-   [Yarn Package Manager](https://yarnpkg.com/en/)
+-   [Visual Studio Code](https://code.visualstudio.com/)
+-   [MongoDB](https://www.mongodb.com/) (`brew install mongodb`)
+    -   MacOSX 10.12
+    -   XCode 8.3.2
 
 ## Setup
 
@@ -17,16 +17,18 @@ API for Project Green (Calling it Cheffer for faster navigation). Built with Nod
 
 Visual Studio Code can work directly with JavaScript out of the box. However, there are a few plugins that would help the development process go much smoother and enforce a code style guideline. Below are the recommended plugins for this project:
 
-*   DotENV
-*   ES7 React/Redux/GraphQL/React-Native snippets
-*   ESLint
-*   GraphQL for VSCode
-*   JShint
-*   Prettier - Code Formatter
-*   GraphQL
-*   GraphQL Language Support
+-   DotENV
+-   ES7 React/Redux/GraphQL/React-Native snippets
+-   ESLint
+-   GraphQL for VSCode
+-   JShint
+-   Prettier - Code Formatter
+-   GraphQL
+-   GraphQL Language Support
 
 ### Local Host setup
+
+The project is incorporated with JWT so make sure to have an jwtSecret environment variable (either through CLI or .env file). Please refer to .sampleenv for example.
 
 Once the project cloned into local machine, simply execute `yarn` and the package manager will install all necessary dependencies for the project. When all dependencies are installed, execute `yarn start` and the server will be up at `http://localhost:3000/`.
 
@@ -36,12 +38,12 @@ GraphQL endpoint is available at `http://localhost:3000/graphql`. In development
 
 ### Commands
 
-*   `yarn init-db`: initialize the local database (**NOTE: all data in local database will be loss once executed**)
-*   `yarn start`: start the development version (with development variables) of the API
-*   `yarn start-production`: start the production version of the API
-*   `yarn clean`: clean up build folder, use when you want to create a fresh production version of the project
-*   `yarn build-server`: build a production version of the project
-*   `yarn build`: Combination of `yarn clean` and `yarn build-server`
+-   `yarn init-db`: initialize the local database (**NOTE: all data in local database will be loss once executed**)
+-   `yarn start`: start the development version (with development variables) of the API
+-   `yarn start-production`: start the production version of the API
+-   `yarn clean`: clean up build folder, use when you want to create a fresh production version of the project
+-   `yarn build-server`: build a production version of the project
+-   `yarn build`: Combination of `yarn clean` and `yarn build-server`
 
 ### Voyager
 
