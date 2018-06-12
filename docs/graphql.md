@@ -1,4 +1,4 @@
-#GraphQL Quick Guide
+# GraphQL Quick Guide
 
 ## Introduction
 
