@@ -8,7 +8,7 @@ Full name of an user, break down to first, middle and last
 type FullName {
     first: String!
     middle: String
-    lastName: String!
+    last: String!
 }
 
 """
