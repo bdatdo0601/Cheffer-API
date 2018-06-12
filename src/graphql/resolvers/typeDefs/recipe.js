@@ -1,7 +1,10 @@
 const ingredient = (obj, args, context, info) => {
     return {
-        ingredient: "test",
-        amount: 2.0,
+        ingredientID: "sfs",
+        name: "sf",
+        synonyms: ["sf"],
+        type: ["f"],
+        group: ["fs"],
     };
 };
 
@@ -66,6 +69,7 @@ const ingredients = (obj, args, context, info) => {
         {
             ingredient: "test",
             amount: 2.2,
+            measurement: "spoons",
         },
     ];
 };

@@ -23,6 +23,8 @@ type IngredientItem {
     ingredient: Ingredient!
     "Amount of that ingredient needed"
     amount: Float!
+    "Measurement use for the ingredient"
+    measurement: String!
 }
 
 """
