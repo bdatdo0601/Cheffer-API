@@ -1,0 +1,8 @@
+"""
+Date type, validating date (using momentjs)
+"""
+scalar Date
+"""
+Email type, make sure email is in correct format
+"""
+scalar Email

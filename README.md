@@ -28,6 +28,8 @@ Visual Studio Code can work directly with JavaScript out of the box. However, th
 
 ### Local Host setup
 
+The project is incorporated with JWT so make sure to have an jwtSecret environment variable (either through CLI or .env file). Please refer to .sampleenv for example.
+
 Once the project cloned into local machine, simply execute `yarn` and the package manager will install all necessary dependencies for the project. When all dependencies are installed, execute `yarn start` and the server will be up at `http://localhost:3000/`.
 
 ## Develop
