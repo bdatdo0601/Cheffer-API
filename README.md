@@ -1,6 +1,6 @@
 # Cheffer-API
 
-API for Project Green (Calling it Cheffer for faster navigation). Built with Node, Fastify, GraphQL.
+API for Project Green (Calling it Cheffer for faster navigation). Built with Node, Fastify, GraphQL. The development server will be available at https://cheffer-api-dev.herokuapp.com/
 
 ## Pre-requirements
 
