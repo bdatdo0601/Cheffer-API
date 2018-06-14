@@ -1,33 +1,4 @@
-import { Schema } from "mongoose";
+import mongoose from "mongoose";
+import UserSchema from "../schemas/user";
 
-import { variables } from "../dbutil";
-
-const { requiredString, requiredDate } = variables;
-
-const userSchema = Schema({
-    name: {
-        first: requiredString,
-        middle: String,
-        last: requiredString,
-    },
-    email: requiredString,
-    password: requiredString,
-    dateJoined: requiredDate,
-    foodFilterParams: [String],
-    favoriteRecipes: [String],
-    favoriteRecipeTypes: [String],
-    viewedRecipe: [
-        {
-            recipeID: requiredString,
-            dateViewed: requiredDate,
-        },
-    ],
-    friends: [
-        {
-            user: requiredString,
-            timeCreated: requiredDate,
-        },
-    ],
-});
-
-export default userSchema;
+export default mongoose.model("Users", UserSchema);

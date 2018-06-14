@@ -8,5 +8,9 @@ export default {
             type: Date,
             required: true,
         },
+        requiredNumber: {
+            type: Number,
+            required: true,
+        },
     },
 };
