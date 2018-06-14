@@ -12,7 +12,7 @@
     "scripts": {
         "clean": "rm -rf build && mkdir build",
         "build-server": "babel -d ./build ./src -s --copy-files",
-        "init-db": "nodemon --exec babel-node -- src/dbinit.js",
+        "init-db": "babel-node src/dbinit.js",
         "start": "rm -rf ./node_modules/.cache/babel-loader && nodemon --exec babel-node -- src/index.js",
         "build": "yarn clean && yarn build-server",
         "init-db-production": "node ./build/dbinit.js",
