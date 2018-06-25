@@ -55,4 +55,6 @@ type User {
     viewedRecipes: [ViewedRecipe]!
     "List of user's friends"
     friends: [Friend]!
+    "Token for header. Need to activate user if login jwt is null"
+    jwtToken: String
 }

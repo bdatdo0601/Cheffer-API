@@ -38,11 +38,8 @@ const recipe = (obj, args, context, info) => {
 };
 
 const name = (obj, args, context, info) => {
-    return {
-        first: "squidney",
-        middle: "",
-        last: "prytherch",
-    };
+    console.log(obj);
+    return obj.name;
 };
 
 const foodFilterParams = (obj, args, context, info) => {

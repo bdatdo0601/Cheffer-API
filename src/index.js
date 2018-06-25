@@ -2,6 +2,7 @@ import Fastify from "fastify";
 import { GraphQLError } from "graphql";
 import { formatError } from "apollo-errors";
 import fastifyJWTPlugin from "fastify-jwt";
+import MongoModels from "mongo-models";
 
 // Configuration data
 import configStore from "./config";
@@ -19,6 +20,11 @@ import Schema from "./graphql";
 const loggerConfig = {
     level: "info",
     prettyPrint: true,
+};
+
+const dbInfo = {
+    uri: configStore.retrieve("/db/mongo/uri"),
+    db: configStore.retrieve("/db/mongo/dbName"),
 };
 
 const fastify = Fastify({
@@ -74,10 +80,19 @@ fastify
 // Run the server!
 const start = async () => {
     try {
+        await MongoModels.connect(
+            dbInfo,
+            {}
+        );
         await fastify.listen(process.env.PORT || 5000, "0.0.0.0");
         fastify.log.info(`Server listening on ${fastify.server.address().port}`);
     } catch (err) {
         fastify.log.error(err);
+        try {
+            await MongoModels.disconnect();
+        } catch (err) {
+            fastify.log.error(err);
+        }
         process.exit(1);
     }
 };
