@@ -1,26 +1,21 @@
-const createUserResolver = (obj, args, context, info) => {
-    console.log("test");
-    return {
-        userID: "userIDMutation",
-        name: {
-            first: "d",
-            middle: "b",
-            last: "d",
-        },
-        email: "test@test.com",
-        password: "123456",
-        dateJoined: new Date(),
-        foodFilterParams: ["id1", "id2", "id3"],
-        favoriteRecipes: ["1", "2", "3"],
-        favoriteRecipeTypes: ["1", "2", "3"],
-        viewedRecipes: ["1", "2", "3"],
-        friends: [
-            {
-                user: "yolo",
-                timeCreated: new Date(),
-            },
-        ],
-    };
+import User from "../../../db/models/user";
+import { createError } from "apollo-errors";
+
+const UserAlreadyExistError = createError("UserAlreadyExist", { message: "User have already been in database" });
+
+const createUserResolver = async (obj, args, context, info) => {
+    const userInfo = args.input;
+
+    const newUser = await User.createNewUser(userInfo);
+
+    if (newUser) {
+        return {
+            userID: newUser._id,
+            ...newUser,
+        };
+    } else {
+        throw new UserAlreadyExistError();
+    }
 };
 
 export default {

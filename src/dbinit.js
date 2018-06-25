@@ -15,6 +15,7 @@ const main = async function() {
             dbInfo,
             {}
         );
+        User.deleteMany({});
         const user = await User.createNewUser({
             name: { first: "Dat", middle: "Bac", last: "Do" },
             password: "root",

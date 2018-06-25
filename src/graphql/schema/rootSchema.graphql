@@ -11,6 +11,8 @@ Query that you can make to server, allowing to receive data from backend
 """
 type Query {
     ### USER ###
+    "Get all user in database"
+    getUsers: [User]!
     "Get an user based on an id input"
     getUserByID(input: GetUserByIDInput): User!
 }

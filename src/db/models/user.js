@@ -47,7 +47,10 @@ class User extends MongoModels {
         documentInput.email = email;
         documentInput.password = hashedPassword;
         documentInput.dateJoined = new Date();
-
+        documentInput.foodFilterParams = [];
+        documentInput.favoriteRecipes = [];
+        documentInput.viewedRecipe = [];
+        documentInput.friends = [];
         const document = new User(documentInput);
         return this.insertOne(document);
     }
