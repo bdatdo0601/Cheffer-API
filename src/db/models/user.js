@@ -52,7 +52,7 @@ class User extends MongoModels {
         documentInput.viewedRecipe = [];
         documentInput.friends = [];
         const document = new User(documentInput);
-        return this.insertOne(document);
+        return await this.insertOne(document);
     }
 
     static async verifyUser(userCredential) {
