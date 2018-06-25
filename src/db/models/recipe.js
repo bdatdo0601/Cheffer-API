@@ -1,30 +1,35 @@
-import { Schema } from "mongoose";
+import Joi from "joi";
+import MongoModels from "mongo-models";
 
-import { variables } from "../dbutil";
-
-const { requiredString, requiredDate, requiredNumber } = variables;
-
-const recipeSchema = Schema({
-    name: requiredString,
-    synonums: [String],
-    type: [String],
-    specialitiesFilter: [String],
-    ingredients: [
-        {
-            ingredient: requiredString,
-            amount: requiredNumber,
-            measurement: requiredString,
-        },
-    ],
-    steps: [
-        {
-            summary: requiredString,
-            detailDescription: String,
-        },
-    ],
-    associatedRecipes: [String],
-    comments: [String],
-    timeCreated: requiredDate,
+const recipeSchema = Joi.object({
+    _id: Joi.object(),
+    name: Joi.string().required(),
+    synonums: Joi.array().items(Joi.string()),
+    type: Joi.array().items(Joi.string()),
+    specialitiesFilter: Joi.array().items(Joi.string()),
+    ingredients: Joi.array().items(
+        Joi.object({
+            ingredient: Joi.string().required(),
+            amount: Joi.number().required(),
+            measurement: Joi.string().required(),
+        })
+    ),
+    steps: Joi.array().items(
+        Joi.object({
+            summary: Joi.string().required(),
+            detailDescription: Joi.string(),
+        })
+    ),
+    associatedRecipes: Joi.array().items(Joi.string()),
+    comments: Joi.array().items(Joi.string()),
+    timeCreated: Joi.date().required(),
 });
 
-export default recipeSchema;
+class Recipe extends MongoModels {
+    //interaction with db here
+}
+
+Recipe.collectionName = "Recipe";
+Recipe.schema = recipeSchema;
+
+export default Recipe;

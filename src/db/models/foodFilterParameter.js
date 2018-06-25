@@ -1,13 +1,18 @@
-import { Schema } from "mongoose";
+import Joi from "joi";
+import MongoModels from "mongo-models";
 
-import { variables } from "../dbutil";
-
-const { requiredString } = variables;
-
-const foodFilterParameterSchema = Schema({
-    name: requiredString,
-    type: [String],
-    restrictions: [String],
+const foodFilterParameterSchema = Joi.object({
+    _id: Joi.object(),
+    name: Joi.string().required(),
+    type: Joi.array().items(Joi.string()),
+    restrictions: Joi.array().items(Joi.string()),
 });
 
-export default foodFilterParameterSchema;
+class FoodFilterParameter extends MongoModels {
+    //interaction with DB here
+}
+
+FoodFilterParameter.collectionName = "FoodFilterParameter";
+FoodFilterParameter.schema = foodFilterParameterSchema;
+
+export default FoodFilterParameter;

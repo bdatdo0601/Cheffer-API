@@ -1,14 +1,19 @@
-import { Schema } from "mongoose";
+import Joi from "joi";
+import MongoModels from "mongo-models";
 
-import { variables } from "../dbutil";
-
-const { requiredString } = variables;
-
-const ingredientSchema = Schema({
-    name: requiredString,
-    synonyms: [String],
-    type: [String],
-    group: [String],
+const ingredientSchema = Joi.object({
+    _id: Joi.object(),
+    name: Joi.string().required(),
+    synonyms: Joi.array().items(Joi.string()),
+    type: Joi.array().items(Joi.string()),
+    group: Joi.array().item(Joi.string()),
 });
 
-export default ingredientSchema;
+class Ingredient extends MongoModels {
+    //interaction with db here
+}
+
+Ingredient.collectionName = "Ingredient";
+Ingredient.schema = ingredientSchema;
+
+export default Ingredient;

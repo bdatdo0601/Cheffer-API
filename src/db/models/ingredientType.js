@@ -1,11 +1,16 @@
-import { Schema } from "mongoose";
+import Joi from "joi";
+import MongoModels from "mongo-models";
 
-import { variables } from "../dbutil";
-
-const { requiredString } = variables;
-
-const ingredientTypeSchema = Schema({
-    name: requiredString,
+const ingredientTypeSchema = Joi.object({
+    _id: Joi.object(),
+    name: Joi.string().required,
 });
 
-export default ingredientTypeSchema;
+class IngredientType extends MongoModels {
+    //interaction with db here
+}
+
+IngredientType.collectionName = "IngredientType";
+IngredientType.schema = ingredientTypeSchema;
+
+export default IngredientType;
