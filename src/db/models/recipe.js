@@ -4,7 +4,7 @@ import MongoModels from "mongo-models";
 const recipeSchema = Joi.object({
     _id: Joi.object(),
     name: Joi.string().required(),
-    synonums: Joi.array().items(Joi.string()),
+    synonyms: Joi.array().items(Joi.string()),
     type: Joi.array().items(Joi.string()),
     specialitiesFilter: Joi.array().items(Joi.string()),
     ingredients: Joi.array().items(
