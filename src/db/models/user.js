@@ -17,7 +17,7 @@ const userSchema = Joi.object({
     foodFilterParams: Joi.array().items(Joi.string()),
     favoriteRecipes: Joi.array().items(Joi.string()),
     favoriteRecipeTypes: Joi.array().items(Joi.string()),
-    viewedRecipe: Joi.array().items(
+    viewedRecipes: Joi.array().items(
         Joi.object({
             recipeID: Joi.string().required(),
             dateViewed: Joi.date().required(),
@@ -38,23 +38,25 @@ class User extends MongoModels {
             email,
         });
         if (isUserExist) return null;
-        const documentInput = {};
         const hashedPassword = await new Promise((resolve, reject) => {
             Bcrypt.hash(password, 10, async (err, hash) => {
                 if (err) reject(err);
                 resolve(hash);
             });
         });
-        documentInput.name = name;
-        documentInput.email = email;
-        documentInput.password = hashedPassword;
-        documentInput.dateJoined = new Date();
-        documentInput.foodFilterParams = [];
-        documentInput.favoriteRecipes = [];
-        documentInput.viewedRecipe = [];
-        documentInput.friends = [];
+        const documentInput = {
+            name,
+            email,
+            password: hashedPassword,
+            dateJoined: new Date(),
+            foodFilterParams: [],
+            favoriteRecipes: [],
+            viewedRecipes: [],
+            friends: [],
+        };
         const document = new User(documentInput);
-        return await this.insertOne(document);
+        const newUser = await this.insertOne(document);
+        return newUser[0];
     }
 
     static async verifyUser(userCredential) {
