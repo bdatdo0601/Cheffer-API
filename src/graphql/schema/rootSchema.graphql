@@ -1,0 +1,27 @@
+# import * from "./typeDefs/util.graphql"
+# import * from "./typeDefs/recipe.graphql"
+# import * from "./typeDefs/user.graphql"
+# import * from "./typeDefs/foodFilterParameter.graphql"
+# import * from "./typeDefs/ingredient.graphql"
+
+# import * from "./input/user.graphql"
+
+"""
+Query that you can make to server, allowing to receive data from backend
+"""
+type Query {
+    ### USER ###
+    "Get an user based on an id input"
+    getUserByID(input: GetUserByIDInput): User!
+}
+
+type Mutation {
+    ### USER ###
+    "Create an user given specified parameters"
+    createUser(input: CreateUserInput): User!
+}
+
+schema {
+    query: Query
+    mutation: Mutation
+}
