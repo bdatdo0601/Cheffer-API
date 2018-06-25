@@ -23,7 +23,7 @@ type Query {
 type Mutation {
     ### USER ###
     "Create an user given specified parameters"
-    createUser(input: CreateUserInput): User!
+    createUser(input: CreateUserInput): User
 }
 
 schema {
