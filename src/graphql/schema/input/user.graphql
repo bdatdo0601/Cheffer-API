@@ -25,5 +25,13 @@ input FullNameInput {
 Input to get user by id
 """
 input GetUserByIDInput {
-    id: ID!
+    userID: ID!
+}
+
+"""
+Input to get user login
+"""
+input LoginInput {
+    email: Email!
+    password: String!
 }

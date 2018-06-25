@@ -2,6 +2,18 @@ import User from "../../../db/models/user";
 import { createError } from "apollo-errors";
 
 const UserNotFoundError = createError("UserNotFound", { message: "User is not found in database" });
+const UserAuthenticationError = createError("UserAuthenticationError", { message: "User authentication error" });
+
+const loginResolver = async (obj, args, context, info) => {
+    const userCredential = args.input;
+    const verifyUser = await User.verifyUser(userCredential);
+    if (verifyUser) {
+        return {
+            userID: verifyUser._id,
+            ...verifyUser,
+        };
+    } else throw new UserAuthenticationError();
+};
 
 const getUsersResolver = async (obj, args, context, info) => {
     const users = await User.find({});
@@ -22,4 +34,5 @@ const getUserByIDResolver = async (obj, args, context, info) => {
 export default {
     getUserByID: getUserByIDResolver,
     getUsers: getUsersResolver,
+    login: loginResolver,
 };

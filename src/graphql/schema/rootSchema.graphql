@@ -10,11 +10,14 @@
 Query that you can make to server, allowing to receive data from backend
 """
 type Query {
+    ### AUTH ###
+    "Authenticate user"
+    login(input: LoginInput): User
     ### USER ###
     "Get all user in database"
-    getUsers: [User]!
+    getUsers: [User]
     "Get an user based on an id input"
-    getUserByID(input: GetUserByIDInput): User!
+    getUserByID(input: GetUserByIDInput): User
 }
 
 type Mutation {

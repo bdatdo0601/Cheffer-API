@@ -34,7 +34,9 @@ const userSchema = Joi.object({
 class User extends MongoModels {
     static async createNewUser(userInfo) {
         const { name, password, email } = userInfo;
-        const isUserExist = await this.findOne({ email });
+        const isUserExist = await this.findOne({
+            email,
+        });
         if (isUserExist) return null;
         const documentInput = {};
         const hashedPassword = await new Promise((resolve, reject) => {
@@ -57,7 +59,9 @@ class User extends MongoModels {
 
     static async verifyUser(userCredential) {
         const { email, password } = userCredential;
-        const user = await this.findOne({ email });
+        const user = await this.findOne({
+            email,
+        });
         if (!user) return null;
         const isPasswordMatch = await new Promise((resolve, reject) => {
             Bcrypt.compare(password, user.password, (err, res) => {
