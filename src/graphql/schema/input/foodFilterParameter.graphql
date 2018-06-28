@@ -1,0 +1,26 @@
+# import * from "../typeDefs/util.graphql"
+
+"""
+Get FoodFilterParam input
+"""
+input GetFoodFilterParamsInput {}
+
+"""
+Get FoodFilterParam by ID input
+"""
+input GetFoodFilterParamByIDInput {}
+
+"""
+create FoodFilterParam input
+"""
+input CreateFoodFilterParamInput {}
+
+"""
+update FoodFilterParam input
+"""
+input EditFoodFilterParamInput {}
+
+"""
+delete FoodFilterParam input
+"""
+input DeleteFoodFilterParamInput {}
