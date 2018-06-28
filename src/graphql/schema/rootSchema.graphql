@@ -10,20 +10,59 @@
 Query that you can make to server, allowing to receive data from backend
 """
 type Query {
-    ### AUTH ###
+    ### USER ###
     "Authenticate user"
     login(input: LoginInput): User
-    ### USER ###
     "Get all user in database"
-    getUsers: [User]
+    getUsers(input: GetUsersInput): [User]
     "Get an user based on an id input"
     getUserByID(input: GetUserByIDInput): User
+    ### RECIPE ###
+    "get recipes based on filter"
+    getRecipes(input: GetRecipesInput): [Recipe]
+    "get exactly one recipe from database"
+    getRecipeByID(input: GetRecipeByIDInput): Recipe
+    ### INGREDIENTS ###
+    "get ingredients in database"
+    getIngredients(input: GetIngredientsInput): [Ingredient]
+    "get ingredent based on an ID"
+    getIngredients(input: GetIngredientByIDInput): Ingredient
+    ### FOOD FILTER PARAMETER ###
+    "get list of all dietary/allergies available"
+    getFoodFilterParams(input: GetFoodFilterParamsInput): [FoodFilterParameter]
+    "get a filter based on ID"
+    getFoodFilterParam(input: GetFoodFilterParamByIDInput): FoodFilterParameter
 }
 
 type Mutation {
     ### USER ###
     "Create an user given specified parameters"
     createUser(input: CreateUserInput): User
+    "Update an user information"
+    editUser(input: DeleteUserInput): User
+    "Delete an user"
+    deleteUser(input: DeleteUserInput): User
+    ### RECIPE ###
+    "Create a recipe"
+    createRecipe(input: CreateRecipeInput): Recipe
+    "Edit a recipe"
+    editRecipe(input: EditRecipeInput): Recipe
+    "Delete a recipe"
+    deleteRecipe(input: DeleteRecipeInput): Recipe
+    ### INGREDIENTS ###
+    "Create a new ingredient"
+    createIngredient(input: CreateIngredientInput): Ingredient
+    "Edit an ingredient"
+    editIngredient(input: EditIngredientInput): Ingredient
+    "Delete an ingredient"
+    deleteIngredient(input: DeleteIngredientInput): Ingredient
+    ### FOOD FILTER PARAMETER ###
+    "Create a new allergy/dietary"
+    createFoodFilterParam(input: CreateFoodFilterParamInput): FoodFilterParameter
+    "Update an allergy/dietary"
+    editFoodFilterParam(input: EditFoodFilterParamInput): FoodFilterParameter
+    "Delete an allergy/dietary"
+    deleteFoodFilterParam(input: DeleteFoodFitlerParamInput): FoodFilterParameter
 }
 
 schema {

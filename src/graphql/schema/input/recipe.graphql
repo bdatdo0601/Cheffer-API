@@ -1,0 +1,26 @@
+# import * from "../typeDefs/util.graphql"
+
+"""
+Get recipe input
+"""
+input GetRecipesInput {}
+
+"""
+Get recipe by ID input
+"""
+input GetRecipeByIDInput {}
+
+"""
+create recipe input
+"""
+input CreateRecipeInput {}
+
+"""
+update recipe input
+"""
+input EditRecipeInput {}
+
+"""
+delete recipe input
+"""
+input DeleteRecipeInput {}

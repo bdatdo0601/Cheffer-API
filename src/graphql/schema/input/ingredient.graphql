@@ -1,0 +1,26 @@
+# import * from "../typeDefs/util.graphql"
+
+"""
+Get Ingredient input
+"""
+input GetIngredientsInput {}
+
+"""
+Get Ingredient by ID input
+"""
+input GetIngredientByIDInput {}
+
+"""
+create Ingredient input
+"""
+input CreateIngredientInput {}
+
+"""
+update Ingredient input
+"""
+input EditIngredientInput {}
+
+"""
+delete Ingredient input
+"""
+input DeleteIngredientInput {}
