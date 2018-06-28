@@ -1,5 +1,6 @@
 import MongoModels from "mongo-models";
 import User from "./db/models/user";
+import UserAuth from "./db/models/userAuth";
 
 // Configuration data
 import configStore from "./config";
@@ -16,6 +17,7 @@ const main = async function() {
             {}
         );
         User.deleteMany({});
+        UserAuth.deleteMany({});
         const user = await User.createNewUser({
             name: { first: "Dat", middle: "Bac", last: "Do" },
             password: "root",
@@ -25,7 +27,8 @@ const main = async function() {
             email: "dod2@wit.edu",
             password: "root",
         });
-        console.log(verifyUser);
+        await UserAuth.storeToken({ userID: verifyUser._id, jwtToken: "000" });
+        console.log("Root Created: Verify success");
         await MongoModels.disconnect();
     } catch (err) {
         console.log(err.message);
