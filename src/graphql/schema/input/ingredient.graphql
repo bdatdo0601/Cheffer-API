@@ -3,24 +3,59 @@
 """
 Get Ingredient input
 """
-input GetIngredientsInput {}
+input GetIngredientsInput {
+    "search query"
+    searchString: String
+    "name to filter ingredient response"
+    name: String
+    "type ingredient belong to"
+    type: [String]
+    "group that ingredient belong to"
+    group: [String]
+}
 
 """
 Get Ingredient by ID input
 """
-input GetIngredientByIDInput {}
+input GetIngredientByIDInput {
+    "ID of the ingredient"
+    ingredientID: ID!
+}
 
 """
 create Ingredient input
 """
-input CreateIngredientInput {}
+input CreateIngredientInput {
+    "Name of the ingredient"
+    name: String!
+    "Other words for the ingredient"
+    synonyms: [String]!
+    "Type of the ingredient"
+    type: [String]!
+    "Group that ingredient belong to"
+    group: [String]!
+}
 
 """
 update Ingredient input
 """
-input EditIngredientInput {}
+input EditIngredientInput {
+    "ID of the ingredient"
+    ingredientID: ID!
+    "Name of the ingredient"
+    name: String
+    "Other words for the ingredient"
+    synonyms: [String]
+    "Type of the ingredient"
+    type: [String]
+    "Group that ingredient belong to"
+    group: [String]
+}
 
 """
 delete Ingredient input
 """
-input DeleteIngredientInput {}
+input DeleteIngredientInput {
+    "ID of the ingredient"
+    ingredientID: ID!
+}

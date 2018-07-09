@@ -222,10 +222,14 @@ const handler = (options = {}, logUtil) => async (request, reply) => {
                 .send(result);
         }
     } catch (error) {
-        // Return error, picking up Boom overrides
-        const { statusCode = 500 } = error.output;
-        const errors = error.data || [error];
-        reply.code(statusCode).send({ errors: errors.map(errorFormatter) });
+        if (error.output) {
+            // Return error, picking up Boom overrides
+            const { statusCode = 500 } = error.output;
+            const errors = error.data || [error];
+            reply.code(statusCode).send({ errors: errors.map(errorFormatter) });
+        } else {
+            console.error(error);
+        }
     }
 };
 

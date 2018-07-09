@@ -9,25 +9,26 @@ input LoginInput {
 }
 
 """
-Get users input
-"""
-input GetUsersInput {}
-
-
-"""
-Input to get user by id
-"""
-input GetUserByIDInput {
-    userID: ID!
-}
-
-"""
 Input for full name
 """
 input FullNameInput {
     first: String!
     middle: String
     last: String!
+}
+
+"""
+Get users input
+"""
+input GetUsersInput {
+    name: FullNameInput
+}
+
+"""
+Input to get user by id
+"""
+input GetUserByIDInput {
+    userID: ID!
 }
 
 """
@@ -40,6 +41,26 @@ input CreateUserInput {
     email: Email!
     "password of the new user"
     password: String!
+    "Food filter parameters for this user"
+    foodFilterParams: [String]
+    "Type of recipe that user have liked"
+    favoriteRecipeTypes: [String]
 }
 
+input EditUserInput {
+    userID: ID!
+    "Full name of the new user"
+    name: FullNameInput!
+    "Email of the new user"
+    email: Email!
+    "password of the new user"
+    password: String!
+    "Food filter parameters for this user"
+    foodFilterParams: [String]
+    "Type of recipe that user have liked"
+    favoriteRecipeTypes: [String]
+}
 
+input DeleteUserInput {
+    userID: ID!
+}

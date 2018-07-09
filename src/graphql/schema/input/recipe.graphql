@@ -1,6 +1,16 @@
 # import * from "../typeDefs/util.graphql"
 
 """
+Recipe Type input
+"""
+input RecipeStepInput {
+    "Summary description"
+    summary: String!
+    "Full description for the step"
+    detailDescription: String
+}
+
+"""
 Get recipe input
 """
 input GetRecipesInput {
@@ -33,7 +43,6 @@ input IngredientItemInput {
     measurement: String!
 }
 
-
 """
 create recipe input
 """
@@ -50,15 +59,32 @@ input CreateRecipeInput {
     ingredients: [IngredientItemInput]!
     "Steps instruction"
     steps: [RecipeStepInput]!
-
 }
 
 """
 update recipe input
 """
-input EditRecipeInput {}
+input EditRecipeInput {
+    "ID of the editing recipe"
+    recipeID: ID!
+    "name of the editing recipe"
+    name: String
+    "synonym for the editing recipe"
+    synonyms: [String]
+    "id of the recipe type"
+    type: String
+    "ids of the food filter param associated"
+    specialitiesFilter: [String]
+    "ingredients for the recipe"
+    ingredients: [IngredientItemInput]
+    "Steps instruction"
+    steps: [RecipeStepInput]
+}
 
 """
 delete recipe input
 """
-input DeleteRecipeInput {}
+input DeleteRecipeInput {
+    "ID of the editing recipe"
+    recipeID: ID!
+}
