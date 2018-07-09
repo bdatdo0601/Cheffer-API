@@ -10,6 +10,7 @@
         "yarn": "1.7.0"
     },
     "scripts": {
+        "heroku-prebuild": "yarn install --production=false",
         "clean": "rm -rf build && mkdir build",
         "build-server": "babel -d ./build ./src -s --copy-files",
         "init-db": "babel-node src/dbinit.js",
