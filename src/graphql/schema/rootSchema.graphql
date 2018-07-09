@@ -5,6 +5,9 @@
 # import * from "./typeDefs/ingredient.graphql"
 
 # import * from "./input/user.graphql"
+# import * from "./input/recipe.graphql"
+# import * from "./input/foodFilterParameter.graphql"
+# import * from "./input/ingredient.graphql"
 
 """
 Query that you can make to server, allowing to receive data from backend
@@ -26,7 +29,7 @@ type Query {
     "get ingredients in database"
     getIngredients(input: GetIngredientsInput): [Ingredient]
     "get ingredent based on an ID"
-    getIngredients(input: GetIngredientByIDInput): Ingredient
+    getIngredientByID(input: GetIngredientByIDInput): Ingredient
     ### FOOD FILTER PARAMETER ###
     "get list of all dietary/allergies available"
     getFoodFilterParams(input: GetFoodFilterParamsInput): [FoodFilterParameter]
@@ -62,7 +65,7 @@ type Mutation {
     "Update an allergy/dietary"
     editFoodFilterParam(input: EditFoodFilterParamInput): FoodFilterParameter
     "Delete an allergy/dietary"
-    deleteFoodFilterParam(input: DeleteFoodFitlerParamInput): FoodFilterParameter
+    deleteFoodFilterParam(input: DeleteFoodFilterParamInput): FoodFilterParameter
 }
 
 schema {
