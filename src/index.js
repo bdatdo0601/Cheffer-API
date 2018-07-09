@@ -23,8 +23,7 @@ const loggerConfig = {
 };
 
 const dbInfo = {
-    uri: configStore.retrieve("/db/mongo/uri"),
-    db: configStore.retrieve("/db/mongo/dbName"),
+    uri: `${configStore.retrieve("/db/mongo/uri")}${configStore.retrieve("/db/mongo/dbName")}`,
 };
 
 const fastify = Fastify({
