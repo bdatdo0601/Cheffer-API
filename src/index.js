@@ -87,6 +87,7 @@ const start = async () => {
         await fastify.listen(process.env.PORT || 5000, "0.0.0.0");
         fastify.log.info(`Server listening on ${fastify.server.address().port}`);
     } catch (err) {
+        console.error(err);
         fastify.log.error(err);
         try {
             await MongoModels.disconnect();
