@@ -79,6 +79,7 @@ fastify
 
 // Run the server!
 const start = async () => {
+    console.log(dbInfo);
     try {
         await MongoModels.connect(
             dbInfo,
