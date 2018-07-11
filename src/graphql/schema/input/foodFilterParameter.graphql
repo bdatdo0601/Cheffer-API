@@ -1,0 +1,57 @@
+# import * from "../typeDefs/util.graphql"
+
+"""
+Get FoodFilterParam input
+"""
+input GetFoodFilterParamsInput {
+    "search query"
+    searchString: String
+    "name to filter food filter response"
+    name: String
+    "type food filter belong to"
+    type: [String]
+    "ingredient associated"
+    restrictions: [String]
+}
+
+"""
+Get FoodFilterParam by ID input
+"""
+input GetFoodFilterParamByIDInput {
+    "ID for a parameter"
+    foodFilterParameterID: ID!
+}
+
+"""
+create FoodFilterParam input
+"""
+input CreateFoodFilterParamInput {
+    "Name of the parameter"
+    name: String!
+    "Type of the parameter such as allergy or dietary"
+    type: String!
+    "Type of ingredient that associated with this filter"
+    restrictions: [String]!
+}
+
+"""
+update FoodFilterParam input
+"""
+input EditFoodFilterParamInput {
+    "ID for a parameter"
+    foodFilterParameterID: ID!
+    "Name of the parameter"
+    name: String
+    "Type of the parameter such as allergy or dietary"
+    type: String
+    "Type of ingredient that associated with this filter"
+    restrictions: [String]
+}
+
+"""
+delete FoodFilterParam input
+"""
+input DeleteFoodFilterParamInput {
+    "ID for a parameter"
+    foodFilterParameterID: ID!
+}

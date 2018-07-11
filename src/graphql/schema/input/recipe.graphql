@@ -1,0 +1,90 @@
+# import * from "../typeDefs/util.graphql"
+
+"""
+Recipe Type input
+"""
+input RecipeStepInput {
+    "Summary description"
+    summary: String!
+    "Full description for the step"
+    detailDescription: String
+}
+
+"""
+Get recipe input
+"""
+input GetRecipesInput {
+    "Query to search for recipes"
+    searchString: String
+    "search from name of recipe"
+    name: String
+    "search from type of recipe"
+    type: [String]
+    "search with filter"
+    specialitiesFilter: [String]
+    "search from ingredient used in recipe"
+    ingredientsUsed: [String]
+}
+
+"""
+Get recipe by ID input
+"""
+input GetRecipeByIDInput {
+    "ID of the interested recipe"
+    recipeID: ID!
+}
+
+"""
+Ingredient Item for recipe
+"""
+input IngredientItemInput {
+    ingredient: String!
+    amount: Float!
+    measurement: String!
+}
+
+"""
+create recipe input
+"""
+input CreateRecipeInput {
+    "name of the new recipe"
+    name: String!
+    "synonym for the new recipe"
+    synonyms: [String]
+    "id of the recipe type"
+    type: String!
+    "ids of the food filter param associated"
+    specialitiesFilter: [String]!
+    "ingredients for the recipe"
+    ingredients: [IngredientItemInput]!
+    "Steps instruction"
+    steps: [RecipeStepInput]!
+}
+
+"""
+update recipe input
+"""
+input EditRecipeInput {
+    "ID of the editing recipe"
+    recipeID: ID!
+    "name of the editing recipe"
+    name: String
+    "synonym for the editing recipe"
+    synonyms: [String]
+    "id of the recipe type"
+    type: String
+    "ids of the food filter param associated"
+    specialitiesFilter: [String]
+    "ingredients for the recipe"
+    ingredients: [IngredientItemInput]
+    "Steps instruction"
+    steps: [RecipeStepInput]
+}
+
+"""
+delete recipe input
+"""
+input DeleteRecipeInput {
+    "ID of the editing recipe"
+    recipeID: ID!
+}

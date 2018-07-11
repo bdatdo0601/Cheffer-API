@@ -47,7 +47,7 @@ const getUserByIDResolver = async (obj, args, context, info) => {
 };
 
 export default {
+    login: loginResolver,
     getUserByID: getUserByIDResolver,
     getUsers: getUsersResolver,
-    login: loginResolver,
 };
