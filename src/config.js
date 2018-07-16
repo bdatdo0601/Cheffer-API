@@ -24,6 +24,13 @@ const document = Object.freeze({
             },
         },
     },
+    aws: {
+        region: process.env.AWS_REGION,
+        bucketName: process.env.BUCKET_NAME,
+        bucketARN: process.env.AWS_BUCKET_ARN,
+        accessID: process.env.AWS_ACCESS_KEY_ID,
+        accessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    },
 });
 
 const store = new Confidence.Store();

@@ -4,6 +4,9 @@ import { formatError } from "apollo-errors";
 import fastifyJWTPlugin from "fastify-jwt";
 import MongoModels from "mongo-models";
 
+//AWS
+import AWS from "aws-sdk";
+
 // Configuration data
 import configStore from "./config";
 
@@ -28,6 +31,13 @@ const dbInfo = {
 
 const fastify = Fastify({
     logger: configStore.retrieve("/logger") ? loggerConfig : false,
+});
+
+AWS.config.update({ region: configStore.retrieve("/aws/region") });
+const S3 = new AWS.S3({
+    params: {
+        Bucket: configStore.retrieve("/aws/bucketName"),
+    },
 });
 
 const errorFormatter = error => {
@@ -60,6 +70,7 @@ fastify
                 context: {
                     Loader,
                     JWTUtils: fastify.jwt,
+                    S3,
                 },
             },
             route: {
@@ -85,6 +96,7 @@ const start = async () => {
             {}
         );
         await fastify.listen(process.env.PORT || 5000, "0.0.0.0");
+
         fastify.log.info(`Server listening on ${fastify.server.address().port}`);
     } catch (err) {
         console.error(err);
