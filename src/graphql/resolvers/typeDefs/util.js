@@ -1,4 +1,5 @@
 import { GraphQLScalarType } from "graphql";
+import { GraphQLUpload } from "apollo-upload-server";
 import { Kind } from "graphql/language";
 
 const EMAIL_REGEX = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
@@ -39,7 +40,10 @@ const Email = new GraphQLScalarType({
     },
 });
 
+const Upload = GraphQLUpload;
+
 export default {
     Date,
     Email,
+    Upload,
 };

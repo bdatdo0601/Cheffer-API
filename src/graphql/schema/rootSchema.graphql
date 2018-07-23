@@ -35,6 +35,9 @@ type Query {
     getFoodFilterParams(input: GetFoodFilterParamsInput): [FoodFilterParameter]
     "get a filter based on ID"
     getFoodFilterParam(input: GetFoodFilterParamByIDInput): FoodFilterParameter
+    ### TEST QUERY ###
+    "get all uploaded file"
+    uploads: [File]
 }
 
 type Mutation {
@@ -66,6 +69,8 @@ type Mutation {
     editFoodFilterParam(input: EditFoodFilterParamInput): FoodFilterParameter
     "Delete an allergy/dietary"
     deleteFoodFilterParam(input: DeleteFoodFilterParamInput): FoodFilterParameter
+    ### TEST MUTATIONS ###
+    singleUpload(file: Upload!): File!
 }
 
 schema {

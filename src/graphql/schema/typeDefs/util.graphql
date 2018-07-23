@@ -6,3 +6,17 @@ scalar Date
 Email type, make sure email is in correct format
 """
 scalar Email
+
+"""
+Upload input, as a stream
+"""
+scalar Upload
+
+"""
+File Input
+"""
+type File {
+    filename: String!
+    mimetype: String!
+    encoding: String!
+}
