@@ -8,6 +8,23 @@ const ingredientGroupSchema = Joi.object({
 
 class IngredientGroup extends MongoModels {
     //interaction with db goes here
+    static async createNewIngredientGroup({ name }) {
+        const isGroupExist = await this.findOne({
+            name: name.toLowerCase(),
+        });
+        if (isGroupExist) return isGroupExist;
+        const documentInput = {
+            name,
+        };
+        const document = new IngredientGroup(documentInput);
+        const newIngredientGroup = await this.insertOne(document);
+        return newIngredientGroup[0];
+    }
+
+    static async getNewIngredientGroup({ name }) {
+        const ingredientGroup = await this.findOne({ name });
+        return ingredientGroup;
+    }
 }
 
 IngredientGroup.collectionName = "IngredientGroup";

@@ -11,6 +11,18 @@ const commentSchema = Joi.object({
 
 class Comment extends MongoModels {
     //Interaction with db here
+    static async createNewComment({ userID, comment }) {
+        const timeCreated = new Date();
+        const documentInput = {
+            user: userID,
+            comment,
+            reply: [],
+            timeCreated: new Date(),
+        };
+        const document = new Comment(documentInput);
+        const newComment = await this.insertOne(document);
+        return newComment[0];
+    }
 }
 
 Comment.collectionName = "Comment";
