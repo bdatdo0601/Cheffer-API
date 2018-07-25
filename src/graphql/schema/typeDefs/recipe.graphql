@@ -74,6 +74,8 @@ type Recipe {
     associatedRecipes: [Recipe]!
     "Comments made to this recipe"
     comments: [Comment]!
+    "Rating"
+    rating: Float
     "Time when this recipe was created"
     timeCreated: Date!
 }

@@ -26,6 +26,7 @@
         "steps": [{ "summary": "put your left foot in" }, { "summary": "take your left foot out" }],
         "headerImage": {
             "url": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg"
-        }
+        },
+        "rating": 2.5
     }
 ]

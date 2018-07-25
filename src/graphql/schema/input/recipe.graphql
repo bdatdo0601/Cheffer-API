@@ -82,6 +82,8 @@ input CreateRecipeInput {
     steps: [RecipeStepInput]!
     "Header Image"
     headerImage: ImageInput
+    "Current Rating out of five"
+    rating: Float
 }
 
 """
