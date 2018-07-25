@@ -74,6 +74,8 @@ type Recipe {
     associatedRecipes: [Recipe]!
     "Comments made to this recipe"
     comments: [Comment]!
+    "Header Image"
+    headerImage: String
     "Rating"
     rating: Float
     "Time when this recipe was created"
