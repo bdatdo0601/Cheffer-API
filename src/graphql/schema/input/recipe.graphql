@@ -34,13 +34,34 @@ input GetRecipeByIDInput {
     recipeID: ID!
 }
 
+input IngredientInput {
+    name: String!
+    synonyms: [String]
+    type: [String]
+    group: [String]
+}
+
 """
 Ingredient Item for recipe
 """
 input IngredientItemInput {
-    ingredient: String!
+    ingredient: IngredientInput!
     amount: Float!
     measurement: String!
+}
+
+"""
+Speciality Filter Input
+"""
+input SpecialityFilterInput {
+    name: String!
+    type: [String]!
+    restrictions: [String]!
+}
+
+input ImageInput {
+    file: Upload
+    url: String
 }
 
 """
@@ -50,15 +71,17 @@ input CreateRecipeInput {
     "name of the new recipe"
     name: String!
     "synonym for the new recipe"
-    synonyms: [String]
-    "id of the recipe type"
-    type: String!
+    synonyms: [String]!
+    "ids of the recipe type"
+    type: [String]!
     "ids of the food filter param associated"
-    specialitiesFilter: [String]!
+    specialitiesFilter: [SpecialityFilterInput]!
     "ingredients for the recipe"
     ingredients: [IngredientItemInput]!
     "Steps instruction"
     steps: [RecipeStepInput]!
+    "Header Image"
+    headerImage: ImageInput
 }
 
 """

@@ -25,6 +25,11 @@ class IngredientType extends MongoModels {
         const ingredientType = await this.findOne({ name: name.toLowerCase() });
         return ingredientType;
     }
+
+    static async getIngredientTypeByID(id) {
+        const ingredientType = await this.findById(id);
+        return ingredientType;
+    }
 }
 
 IngredientType.collectionName = "IngredientType";

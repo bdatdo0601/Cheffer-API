@@ -23,6 +23,10 @@ class Comment extends MongoModels {
         const newComment = await this.insertOne(document);
         return newComment[0];
     }
+    static async getCommentByID(id) {
+        const comment = await this.findById(id);
+        return comment;
+    }
 }
 
 Comment.collectionName = "Comment";

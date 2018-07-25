@@ -17,13 +17,18 @@ class FoodFilterParameterType extends MongoModels {
         const documentInput = {
             name: name.toLowerCase(),
         };
-        const document = new IngredientType(documentInput);
+        const document = new FoodFilterParameterType(documentInput);
         const newFoodFilterParamType = await this.insertOne(document);
         return newFoodFilterParamType[0];
     }
 
     static async getFoodFilterParamType({ name }) {
         const foodFilterParamType = await this.findOne({ name: name.toLowerCase() });
+        return foodFilterParamType;
+    }
+
+    static async getFoodFilterParamTypeByID(id) {
+        const foodFilterParamType = await this.findById(id);
         return foodFilterParamType;
     }
 }

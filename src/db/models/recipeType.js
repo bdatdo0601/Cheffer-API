@@ -26,6 +26,10 @@ class RecipeType extends MongoModels {
         const recipeType = await this.findOne({ name: name.toLowerCase() });
         return recipeType;
     }
+    static async getRecipeTypeByID(id) {
+        const recipeType = await this.findById(id);
+        return recipeType;
+    }
 }
 
 RecipeType.collectionName = "RecipeType";

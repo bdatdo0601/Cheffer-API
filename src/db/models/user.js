@@ -77,6 +77,11 @@ class User extends MongoModels {
     static async getAllUser() {
         return await this.find({});
     }
+
+    static async getUserByID(id) {
+        const user = await this.findById(id);
+        return user;
+    }
 }
 
 User.collectionName = "User";

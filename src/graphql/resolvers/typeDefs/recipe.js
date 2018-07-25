@@ -1,115 +1,114 @@
-const ingredient = (obj, args, context, info) => {
-    return {
-        ingredientID: "sfs",
-        name: "sf",
-        synonyms: ["sf"],
-        type: ["f"],
-        group: ["fs"],
-    };
+import Ingredient from "../../../db/models/ingredient";
+import FoodFilterParameter from "../../../db/models/foodFilterParameter";
+import Recipe from "../../../db/models/recipe";
+import RecipeType from "../../../db/models/recipeType";
+import Comment from "../../../db/models/comment";
+import User from "../../../db/models/user";
+
+const ingredient = async (obj, args, context, info) => {
+    const ingredient = await Ingredient.getIngredientByID(obj.ingredient);
+    if (ingredient) {
+        return {
+            ingredientID: ingredient._id,
+            ...ingredient,
+        };
+    }
+    return null;
 };
 
-const user = (obj, args, context, info) => {
-    return {
-        userID: "userID",
-        name: {
-            first: "d",
-            middle: "b",
-            last: "d",
-        },
-        email: "test@test.com",
-        password: "123456",
-        dateJoined: new Date(),
-        foodFilterParams: ["id1", "id2", "id3"],
-        favoriteRecipes: ["1", "2", "3"],
-        favoriteRecipeTypes: ["1", "2", "3"],
-        viewedRecipes: ["1", "2", "3"],
-        friends: [
-            {
-                user: "yolo",
-                timeCreated: new Date(),
-            },
-        ],
-    };
+const user = async (obj, args, context, info) => {
+    const user = await User.getUser(obj.user);
+    if (user) {
+        return {
+            userID: user._id,
+            ...user,
+        };
+    }
+    return null;
 };
 
-const reply = (obj, args, context, info) => {
-    return [
-        {
-            commentID: "test",
-            user: "userID",
-            comment: "test",
-            reply: ["test1", "test2", "test3"],
-            timeCreated: new Date(),
-        },
-    ];
+const reply = async (obj, args, context, info) => {
+    return await Promise.all(
+        obj.reply.map(async item => {
+            const reply = await Comment.getCommentByID(item);
+            if (reply) {
+                return { commentID: reply._id, ...reply };
+            }
+            return null;
+        })
+    );
 };
 
-const type = (obj, args, context, info) => {
-    return [
-        {
-            recipeTypeID: "test",
-            name: "yolo",
-        },
-    ];
+const type = async (obj, args, context, info) => {
+    return await Promise.all(
+        obj.type.map(async item => {
+            const recipeType = await RecipeType.getRecipeTypeByID(item);
+            if (recipeType) {
+                return { recipeTypeID: recipeType._id, ...recipeType };
+            }
+            return null;
+        })
+    );
 };
 
-const specialitiesFilter = (obj, args, context, info) => {
-    return [
-        {
-            foodFilterParameterID: "test",
-            name: "test",
-            type: "foodFilterParamTypeID",
-            restrictions: ["tet", "tes"],
-        },
-    ];
+const specialitiesFilter = async (obj, args, context, info) => {
+    return await Promise.all(
+        obj.specialitiesFilter.map(async item => {
+            const filter = await FoodFilterParameter.getFoodFilterParameterByID(item);
+            if (filter) {
+                return {
+                    foodFilterParameterID: filter._id,
+                    ...filter,
+                };
+            }
+            return null;
+        })
+    );
 };
 
-const ingredients = (obj, args, context, info) => {
-    return [
-        {
-            ingredient: "test",
-            amount: 2.2,
-            measurement: "spoons",
-        },
-    ];
+const ingredients = async (obj, args, context, info) => {
+    return obj.ingredients.map(item => {
+        const { measurement, amount, ingredient } = item;
+        return {
+            ingredient,
+            measurement,
+            amount,
+        };
+    });
 };
 
 const steps = (obj, args, context, info) => {
-    return [
-        {
-            summary: "sum",
-            detailDescription: "details",
-        },
-    ];
+    return obj.steps;
 };
 
-const associatedRecipes = (obj, args, context, info) => {
-    return [
-        {
-            recipeID: "id",
-            name: "test",
-            synonyms: ["124"],
-            type: ["type"],
-            specialitiesFilter: ["e"],
-            ingredients: ["fa"],
-            steps: ["fsf"],
-            associatedRecipes: ["test"],
-            comments: ["comments"],
-            timeCreated: new Date(),
-        },
-    ];
+const associatedRecipes = async (obj, args, context, info) => {
+    return await Promise.all(
+        obj.associatedRecipes.map(async item => {
+            const recipe = await Recipe.getRecipeByID(item);
+            if (recipe) {
+                return {
+                    recipeID: recipe._id,
+                    ...recipe,
+                };
+            }
+            return null;
+        })
+    );
 };
 
-const comments = (obj, args, context, info) => {
-    return [
-        {
-            commentID: "test",
-            user: "userID",
-            comment: "test",
-            reply: ["test1", "test2", "test3"],
-            timeCreated: new Date(),
-        },
-    ];
+const comments = async (obj, args, context, info) => {
+    return await Promise.all(
+        obj.comments.map(async item => {
+            const comment = await Comment.getCommentByID(item);
+            if (comment) {
+                return {
+                    foodFilterParameterID: comment._id,
+                    ...comment,
+                };
+            }
+            return null;
+        })
+    );
 };
 
 export default {

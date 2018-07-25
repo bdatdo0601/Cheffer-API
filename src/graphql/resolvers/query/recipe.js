@@ -7,9 +7,9 @@ const RecipeNotFoundError = createError("RecipeNotFoundError", {
 
 const getRecipesResolver = async (obj, args, context, info) => {
     const recipes = await Recipe.find({});
-    return recipes.map(user => ({
-        recipeID: recipe._id,
-        ...recipes,
+    return recipes.map(recipe => ({
+        recipeID: recipe._id.toString(),
+        ...recipe,
     }));
 };
 

@@ -21,8 +21,13 @@ class IngredientGroup extends MongoModels {
         return newIngredientGroup[0];
     }
 
-    static async getNewIngredientGroup({ name }) {
+    static async getIngredientGroup({ name }) {
         const ingredientGroup = await this.findOne({ name });
+        return ingredientGroup;
+    }
+
+    static async getIngredientGroupByID(id) {
+        const ingredientGroup = await this.findById(id);
         return ingredientGroup;
     }
 }

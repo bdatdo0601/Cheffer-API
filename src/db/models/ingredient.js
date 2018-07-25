@@ -16,17 +16,25 @@ class Ingredient extends MongoModels {
     static async createNewIngredient({ name, synonyms, type, group }) {
         const isIngredientExist = await this.findOne({ synonyms: name });
         if (isIngredientExist) return isIngredientExist;
-        const groupList = group.map(async item => {
-            const data = await IngredientGroup.createNewIngredientGroup({ name: item });
-            return data._id;
-        });
-        const typeList = type.map(async item => {
-            const data = await IngredientType.createNewIngredientType({ name: item });
-            return data._id;
-        });
+        const groupList = group
+            ? await Promise.all(
+                  group.map(async item => {
+                      const data = await IngredientGroup.createNewIngredientGroup({ name: item });
+                      return data._id;
+                  })
+              )
+            : [];
+        const typeList = type
+            ? await Promise.all(
+                  type.map(async item => {
+                      const data = await IngredientType.createNewIngredientType({ name: item });
+                      return data._id;
+                  })
+              )
+            : [];
         const documentInput = {
             name,
-            synonyms: [...synonyms, name],
+            synonyms: synonyms ? [...synonyms, name] : [name],
             group: groupList,
             type: typeList,
         };
@@ -38,6 +46,11 @@ class Ingredient extends MongoModels {
     static async getIngredients({ name, group, type }) {
         const ingredients = await this.find({ synonyms: name, group, type });
         return ingredients;
+    }
+
+    static async getIngredientByID(id) {
+        const ingredient = await this.findById(id);
+        return ingredient;
     }
 }
 

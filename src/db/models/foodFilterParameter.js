@@ -16,22 +16,36 @@ class FoodFilterParameter extends MongoModels {
     static async createNewFoodFilterParameter({ name, type, restrictions }) {
         const isAlreadyExist = await this.findOne({ name });
         if (isAlreadyExist) return isAlreadyExist;
-        const restrictionsList = restrictions.map(async restriction => {
-            const ingredient = await Ingredient.getIngredients({ name: restriction });
-            return ingredient[0]._id;
-        });
-        const typeList = type.map(async item => {
-            const data = await FoodFilterParameterType.createNewFoodFilterParamType({ name: item });
-            return data._id;
-        });
+        const restrictionsList = restrictions
+            ? await Promise.all(
+                  restrictions.map(async restriction => {
+                      const ingredient = await Ingredient.createNewIngredient({ name: restriction });
+                      return ingredient._id.toString();
+                  })
+              )
+            : [];
+        const typeList = type
+            ? await Promise.all(
+                  type.map(async item => {
+                      const data = await FoodFilterParameterType.createNewFoodFilterParamType({ name: item });
+                      return data._id.toString();
+                  })
+              )
+            : [];
         const documentInput = {
             name,
             type: typeList,
             restrictions: restrictionsList,
         };
+
         const document = new FoodFilterParameter(documentInput);
         const newFoodFilterParameter = await this.insertOne(document);
         return newFoodFilterParameter[0];
+    }
+
+    static async getFoodFilterParameterByID(id) {
+        const foodFilterParameter = await this.findById(id);
+        return foodFilterParameter;
     }
 }
 
