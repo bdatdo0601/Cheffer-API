@@ -13,6 +13,18 @@ const getRecipesResolver = async (obj, args, context, info) => {
     }));
 };
 
+const getRecipeByID = async (obj, args, context, info) => {
+    const recipe = await Recipe.getRecipeByID(args.input.recipeID);
+    if (recipe) {
+        return {
+            ...recipe,
+            recipeID: args.input.recipeID,
+        };
+    }
+    return null;
+};
+
 export default {
     getRecipes: getRecipesResolver,
+    getRecipeByID,
 };
