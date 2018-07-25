@@ -1,32 +1,47 @@
 [
     {
-        "name": "Bread Rolls",
-        "synonyms": ["little bread"],
-        "type": ["dinner", "american"],
-        "specialitiesFilter": [
-            { "name": "peanut", "type": ["allergy"], "restrictions": ["peanuts", "almonds"] },
-            { "name": "dairy", "type": ["diet"], "restrictions": ["bread", "grains"] }
-        ],
+        "name": "Garlic Butter Salmon",
+        "synonyms": ["garlicky fishy"],
+        "type": ["dinner", "seafood", "american"],
+        "specialitiesFilter": [{ "name": "fish", "type": ["allergy"], "restrictions": ["salmon", "tuna"] }],
         "ingredients": [
             {
                 "ingredient": {
-                    "name": "flour"
+                    "name": "salmon"
                 },
                 "amount": 1,
                 "measurement": "kg"
             },
             {
                 "ingredient": {
-                    "name": "sugar"
+                    "name": "garlic"
                 },
                 "amount": 2,
-                "measurement": "kg"
+                "measurement": "g"
             }
         ],
-        "steps": [{ "summary": "put your left foot in" }, { "summary": "take your left foot out" }],
+        "steps": [{ "summary": "put your left foot in out" }, { "summary": "take your left foot out in" }],
         "headerImage": {
-            "url": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg"
+            "url": "https://www.cookingclassy.com/wp-content/uploads/2017/02/skillet-seared-salmon-2.jpg"
         },
-        "rating": 2.5
+        "rating": 2.5,
+        "prepTime": 50
+    },
+    {
+        "name": "Bread Roll",
+        "synonyms": ["Little Bread"],
+        "type": ["dinner", "american"],
+        "specialitiesFilter": [{ "name": "dairy", "type": ["allergy"], "restrictions": ["bread", "grains"] }],
+        "ingredients": [
+            { "ingredient": { "name": "flour" }, "amount": 1, "measurement": "kg" },
+            { "ingredient": { "name": "sugar" }, "amount": 2, "measurement": "g" }
+        ],
+        "steps": [{ "summary": "put your left foot in out" }, { "summary": "take your left foot out in" }],
+        "headerImage": {
+            "url":
+                "https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/24/63/17/picYW5YaV.jpg"
+        },
+        "rating": 5,
+        "prepTime": 10
     }
 ]
