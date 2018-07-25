@@ -1,0 +1,31 @@
+[
+    {
+        "name": "Bread Rolls",
+        "synonyms": ["little bread"],
+        "type": ["dinner", "american"],
+        "specialitiesFilter": [
+            { "name": "peanut", "type": ["allergy"], "restrictions": ["peanuts", "almonds"] },
+            { "name": "dairy", "type": ["diet"], "restrictions": ["bread", "grains"] }
+        ],
+        "ingredients": [
+            {
+                "ingredient": {
+                    "name": "flour"
+                },
+                "amount": 1,
+                "measurement": "kg"
+            },
+            {
+                "ingredient": {
+                    "name": "sugar"
+                },
+                "amount": 2,
+                "measurement": "kg"
+            }
+        ],
+        "steps": [{ "summary": "put your left foot in" }, { "summary": "take your left foot out" }],
+        "headerImage": {
+            "url": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg"
+        }
+    }
+]

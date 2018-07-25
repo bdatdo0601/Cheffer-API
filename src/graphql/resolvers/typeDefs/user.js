@@ -79,13 +79,19 @@ const favoriteRecipeTypes = (obj, args, context, info) => {
     ];
 };
 
-const viewedRecipes = (obj, args, context, info) => {
-    return [
-        {
-            recipe: "asf",
-            dateViewed: new Date(),
-        },
-    ];
+const viewedRecipes = async (obj, args, context, info) => {
+    return await Promise.all(
+        obj.viewedRecipes.map(async item => {
+            const recipe = await Recipe.getRecipeByID(item);
+            if (recipe) {
+                return {
+                    recipeID: recipe._id,
+                    ...recipe,
+                };
+            }
+            return null;
+        })
+    );
 };
 
 const friends = (obj, args, context, info) => {
