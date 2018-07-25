@@ -80,6 +80,8 @@ input CreateRecipeInput {
     ingredients: [IngredientItemInput]!
     "Steps instruction"
     steps: [RecipeStepInput]!
+    "Prep Time in minutes"
+    prepTime: Int!
     "Header Image"
     headerImage: ImageInput
     "Current Rating out of five"

@@ -25,6 +25,7 @@ const recipeSchema = Joi.object({
             detailDescription: Joi.string(),
         })
     ),
+    prepTime: Joi.number(),
     rating: Joi.number(),
     associatedRecipes: Joi.array().items(Joi.string()),
     comments: Joi.array().items(Joi.string()),
@@ -44,6 +45,7 @@ class Recipe extends MongoModels {
         associatedRecipes,
         comments,
         rating,
+        prepTime,
     }) {
         try {
             const isRecipeExist = await this.findOne({ synonyms: name });
@@ -80,6 +82,7 @@ class Recipe extends MongoModels {
                 associatedRecipes: associatedRecipes ? associatedRecipes : [],
                 comments: comments ? comments : [],
                 rating,
+                prepTime: prepTime ? prepTime : 0,
                 timeCreated: new Date(),
             };
             const document = new Recipe(documentInput);

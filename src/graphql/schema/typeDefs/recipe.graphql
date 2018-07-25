@@ -76,6 +76,8 @@ type Recipe {
     comments: [Comment]!
     "Header Image"
     headerImage: String
+    "Prep Time in minutes"
+    prepTime: Int!
     "Rating"
     rating: Float
     "Time when this recipe was created"
