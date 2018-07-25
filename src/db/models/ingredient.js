@@ -8,7 +8,7 @@ const ingredientSchema = Joi.object({
     name: Joi.string().required(),
     synonyms: Joi.array().items(Joi.string()),
     type: Joi.array().items(Joi.string()),
-    group: Joi.array().item(Joi.string()),
+    group: Joi.array().items(Joi.string()),
 });
 
 class Ingredient extends MongoModels {

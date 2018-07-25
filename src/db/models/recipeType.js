@@ -28,7 +28,7 @@ class RecipeType extends MongoModels {
     }
 }
 
-User.collectionName = "RecipeType";
-User.schema = recipeTypeSchema;
+RecipeType.collectionName = "RecipeType";
+RecipeType.schema = recipeTypeSchema;
 
 export default RecipeType;

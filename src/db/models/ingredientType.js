@@ -3,7 +3,7 @@ import MongoModels from "mongo-models";
 
 const ingredientTypeSchema = Joi.object({
     _id: Joi.object(),
-    name: Joi.string().required,
+    name: Joi.string().required(),
 });
 
 class IngredientType extends MongoModels {
