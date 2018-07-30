@@ -20,7 +20,7 @@ class Ingredient extends MongoModels {
             ? await Promise.all(
                   group.map(async item => {
                       const data = await IngredientGroup.createNewIngredientGroup({ name: item });
-                      return data._id;
+                      return data._id.toString();
                   })
               )
             : [];
@@ -28,7 +28,7 @@ class Ingredient extends MongoModels {
             ? await Promise.all(
                   type.map(async item => {
                       const data = await IngredientType.createNewIngredientType({ name: item });
-                      return data._id;
+                      return data._id.toString();
                   })
               )
             : [];

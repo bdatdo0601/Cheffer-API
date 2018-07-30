@@ -39,7 +39,7 @@ const createRecipeResolver = async (obj, args, context, info) => {
     }
     const newRecipe = await Recipe.createNewRecipe({ ...recipeInfo, headerImage: headerImageLink });
     if (newRecipe) {
-        return { recipeID: newRecipe._id, ...newRecipe };
+        return { recipeID: newRecipe._id, ...newRecipe, prepTime: newRecipe.prepTime ? newRecipe.prepTime : 40 };
     } else {
         return null;
     }
